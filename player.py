@@ -9,3 +9,4 @@ class Player(pygame.sprite.Sprite):
         self.rect = self.image.get_rect(topleft = pos)
 
         #player movement
+        
