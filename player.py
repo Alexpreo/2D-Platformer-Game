@@ -1,5 +1,5 @@
 import pygame
-from settings import *
+from settings import*
 
 class Player(pygame.sprite.Sprite):
     def __init__(self,pos,groups):
@@ -9,4 +9,18 @@ class Player(pygame.sprite.Sprite):
         self.rect = self.image.get_rect(topleft = pos)
 
         #player movement
+        self.direction = pygame.math.Vector2()
+        self.speed = 8
+        
+    def input(self):
+        keys = pygame.key.get_pressed()
+        
+        if keys[pygame.K_RIGHT]:
+            self.direction.x = 1
+        if keys[pygame.K_LEFT]:
+            self.direction.x = -1
+        if keys[pygame.K_UP]:
+            self.direction.y = 1
+        if keys[pygame.K_DOWN]:
+            self.direction.y = -1
         
